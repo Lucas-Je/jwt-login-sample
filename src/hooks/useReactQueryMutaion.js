@@ -36,10 +36,13 @@ export const useLogin = queryKey => {
                 setAuth({ authenticated: true, accessToken: token.accessToken, expires: token.accessTokenExpiresAt });
                 silentRefresh({refreshToken: data.data.token.refreshToken})
             } else {
-                Logger.error("failed login")
+                throw new Error(JSON.stringify(data));
             }
         },
-        onError: (error, variable, context) => {},
+
+        onError: (error, variable, context) => {
+            Logger.log('onError', error.message)
+        },
         onSettled: () => {},
     });
 };

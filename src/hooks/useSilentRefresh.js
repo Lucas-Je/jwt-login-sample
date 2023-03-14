@@ -3,7 +3,7 @@ import {apis} from "../repository/APIs";
 import {queryKey} from "../constnats/queryKey";
 
 const useSilentRefresh = ({refreshToken}) => {
-    useQuery([queryKey.auth.reIssueToken, refreshToken], apis.reIssueToken(refreshToken), {
+    useQuery([queryKey.auth.refreshToken, refreshToken], apis.refreshToken(refreshToken), {
         refetchOnWindowFocus: false,
         refetchOnMount: false,
         refetchOnReconnect: false,
