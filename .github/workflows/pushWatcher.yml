@@ -11,7 +11,7 @@ jobs:
         id: myRequest
         uses: fjogeleit/http-request-action@main
         with:
-          url: 'https://15.165.77.33:3000/githubWatcher'
+          url: 'http://15.165.77.33:3000/githubWatcher'
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
           data: '{"caller": "pushWatcher"}'
