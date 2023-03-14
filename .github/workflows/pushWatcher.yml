@@ -1,6 +1,9 @@
 on:
   push:
     branches: [seunghee-test]
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
 jobs:
   deployment:
     runs-on: ubuntu-latest
@@ -13,4 +16,4 @@ jobs:
           url: 'http://15.165.77.33:3000/githubWatcher'
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
-          data: '{"sha": ${{ github.sha }}}'
+          data: '{"branch": ${BRANCH_NAME}}'
