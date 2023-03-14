@@ -15,5 +15,4 @@ jobs:
         with:
           url: 'http://15.165.77.33:3000/githubWatcher'
           method: 'POST'
-          customHeaders: '{"Content-Type": "application/json"}'
           data: '{"branch": ${{ env.BRANCH_NAME }}}'
