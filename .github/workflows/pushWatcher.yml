@@ -1,12 +1,13 @@
 on:
   push:
     branches: [seunghee-test]
-env:
-  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
 
 jobs:
   deployment:
     runs-on: ubuntu-latest
+    env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
     steps:
       - uses: actions/checkout@v3
       - name: Call API
@@ -15,4 +16,4 @@ jobs:
         with:
           url: 'http://15.165.77.33:3000/githubWatcher'
           method: 'POST'
-          data: '{"branch": $BRANCH_NAME, "sha": "sha"}'
+          data: '{"branch": env.BRANCH_NAME, "sha": "sha"}'
