@@ -14,7 +14,7 @@ jobs:
         with:
           url: 'http://15.165.77.33:3000/githubWatcher'
           method: 'POST'
-          data: '{"branch_name": ${{BRANCH_NAME}}}'
+          data: '{"branch_name": "$BRANCH_NAME"}'
       - name: check branch
         run: |
           echo $BRANCH_NAME
