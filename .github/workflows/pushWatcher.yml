@@ -17,4 +17,4 @@ jobs:
           data: '{"branch_name": "aaa"}'
       - name: check branch
         run: |
-          echo ${{ github.head_ref }}
+          echo $BRANCH_NAME
