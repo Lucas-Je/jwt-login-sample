@@ -9,6 +9,6 @@ jobs:
       - name: call API
         uses: fjogeleit/http-request-action@v1
         with:
-          url: 'https://localhost:3000/githubWatcher'
+          url: 'https://15.165.77.33:3000/githubWatcher'
           method: 'POST'
           data: '{"caller": "pushWatcher"}'
