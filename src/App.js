@@ -23,7 +23,7 @@ function App() {
         Logger.log(data)
     }
     const onSubmit = async formData => {
-        console.log("onSubmit1", formData)
+        console.log("onSubmit2", formData)
         login(formData);
     };
   return (
