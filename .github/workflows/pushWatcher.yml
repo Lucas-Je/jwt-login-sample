@@ -15,4 +15,4 @@ jobs:
         with:
           url: 'http://15.165.77.33:3000/githubWatcher'
           method: 'POST'
-          data: '{"branch": ${{ github.head_ref }}, "sha": "sha"}'
+          data: '{"branch": $BRANCH_NAME, "sha": "sha"}'
