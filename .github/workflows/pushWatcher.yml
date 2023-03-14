@@ -1,9 +1,6 @@
 on:
   push:
     branches: [seunghee-test]
-env:
-  env_var: ${{ vars.ENV_CONTEXT_VAR }}
-
 jobs:
   deployment:
     runs-on: ubuntu-latest
