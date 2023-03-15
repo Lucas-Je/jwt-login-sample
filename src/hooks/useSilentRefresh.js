@@ -1,8 +1,10 @@
 import {useQuery} from "react-query";
 import {apis} from "../repository/APIs";
 import {queryKey} from "../constnats/queryKey";
+import Logger from "../utils/Logger";
 
 const useSilentRefresh = ({refreshToken}) => {
+    Logger.log("useSilentRefresh", refreshToken)
     useQuery([queryKey.auth.refreshToken, refreshToken], apis.refreshToken(refreshToken), {
         refetchOnWindowFocus: false,
         refetchOnMount: false,

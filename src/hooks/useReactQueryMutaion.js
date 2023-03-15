@@ -6,24 +6,13 @@ import {COOKIES} from "../constnats/login";
 import {useResetRecoilState, useSetRecoilState} from "recoil";
 import {authAtom} from "../state/auth";
 import Logger from "../utils/Logger";
-// const logout = () => {
-//     return new Promise((resolve, reject) => {
-//         try {
-//             resetAuth();
-//             removeCookie(COOKIES.REFRESH_TOKEN);
-//             resolve();
-//         } catch (e) {
-//             Logger.error('e', e);
-//             reject();
-//         }
-//     });
-// };
 export const useLogin = queryKey => {
     const setAuth = useSetRecoilState(authAtom);
     const resetAuth = useResetRecoilState(authAtom);
     const queryClient = useQueryClient();
     const silentRefresh = useSilentRefresh;
     const login = async loginInfo => {
+        Logger.error("useLogin", loginInfo)
         return apis.login(loginInfo)
     };
 
