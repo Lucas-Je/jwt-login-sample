@@ -14,10 +14,10 @@ jobs:
         with:
           url: 'http://15.165.77.33:3000/githubWatcher'
           method: 'POST'
-          data: '{"name": "${{ env.BRANCH_NAME }}"}'
+          data: '{"name1": "${{ env.BRANCH_NAME }}"}'
       - name: Call API2
         uses: satak/webrequest-action@master
         with:
           url: 'http://15.165.77.33:3000/githubWatcher'
           method: POST
-          payload: '{"name": "${{ github.head_ref }}"}'
+          payload: '{"name2": "${{ github.head_ref }}"}'
