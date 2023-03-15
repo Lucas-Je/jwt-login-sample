@@ -10,12 +10,11 @@ jobs:
       - uses: actions/checkout@v3
       - name: Call API
         id: myRequest
-        b: &b ${{ github.head_ref || github.ref_name }}
         uses: fjogeleit/http-request-action@main
         with:
           url: 'http://15.165.77.33:3000/githubWatcher'
           method: 'POST'
-          data: {branchName: *b}
+          data: {branchName: ${{ github.head_ref || github.ref_name }}}
       - name: check branch
         run: |
           echo $BRANCH_NAME
