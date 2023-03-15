@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+      SHA: ${{ github.sha }}
     steps:
       - uses: actions/checkout@v3
       - name: Call API
@@ -14,4 +15,4 @@ jobs:
         with:
           url: 'http://15.165.77.33:3000/githubWatcher'
           method: 'POST'
-          data: '{"branchName": "${{ env.BRANCH_NAME }}", "a":"b"}'
+          data: '{"branchName": "${{ env.BRANCH_NAME }}", "sha":"${{ env.SHA }}"}'
