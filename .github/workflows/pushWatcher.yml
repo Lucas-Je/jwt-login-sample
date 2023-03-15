@@ -5,7 +5,8 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     env:
-      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+      REPOSITORY: ${{ github.repository }}
+      BRANCH: ${{ github.head_ref || github.ref_name }}
       SHA: ${{ github.sha }}
     steps:
       - uses: actions/checkout@v3
@@ -15,4 +16,4 @@ jobs:
         with:
           url: 'http://15.165.77.33:3000/githubWatcher'
           method: 'POST'
-          data: '{"branchName": "${{ env.BRANCH_NAME }}", "sha":"${{ env.SHA }}"}'
+          data: '{"repository": "${{ env.REPOSITORY }}", "branch": "${{ env.BRANCH }}", "sha":"${{ env.SHA }}"}'
