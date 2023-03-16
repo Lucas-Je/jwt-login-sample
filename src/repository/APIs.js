@@ -4,7 +4,6 @@ const url = {
     auth: {
         login: '/api/v1/auth/signin',
         refreshToken: '/api/v1/auth/refresh',
-        refreshToken3: '/api/v1/auth/refresh3',
     },
 };
 
