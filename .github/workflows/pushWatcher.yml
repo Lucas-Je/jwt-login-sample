@@ -1,6 +1,5 @@
-on:
-  push:
-    branches: [seunghee-test]
+on: push
+
 jobs:
   deployment:
     runs-on: ubuntu-latest
