@@ -6,14 +6,12 @@ const client = axios.create({ baseURL: REACT_APP_API_SERVER_BASE_URL });
 
 const onRequest = config => {
     const { headers, method, url, data } = config;
-    Logger.network('axios ======================>', headers, method, url, data ?? '');
     return config;
 };
 
 const onResponseSuccess = response => {
     const { url } = response.config;
     const { status } = response;
-    Logger.network('axios <======================', status, url, response.data);
     return response;
 };
 
